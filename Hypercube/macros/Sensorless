@@ -1,0 +1,16 @@
+; Sensorless Homing test file for RepRapFirmware on Kossel
+M400					; make sure everything has stopped before we make changes
+M574 X1 Y1 S3			; set endstops to use motor stall
+M913 X70 Y70 Z50			; reduce motor current to 50% to prevent belts slipping
+G91					; use relative positioning
+;G1 S1 X-700 Y-700 F4000		; move all carriages up 700mm, stopping at the endstops
+;G1 S1 X-300  F4000		; move all carriages up 700mm, stopping at the endstops
+G1 S1 Y-300  F4000		; move all carriages up 700mm, stopping at the endstops
+;G1 X100 F4000
+;G1 S1 X-300  F4000
+;G1 Z-5 F2000				; down a few mm so that we can centre the head
+G90					; back to absolute positioning
+M400					; make sure everything has stopped before we reset the motor currents
+M913 X100 Y100 Z100			; motor currents back to normal
+;G1 X0 Y0 F2000				; centre the head and set a reasonable feed rate
+;M574 X2 Y2 Z2 S1			; set endstops back to normal so that homedelta.g works

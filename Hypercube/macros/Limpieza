@@ -1,0 +1,9 @@
+; Clean Nozzle
+G90			; Absolute Positioning
+G1 Z5 F5000 		; Lift Nozzle
+;G1 X0 Y25   		; Go to Cleaning Position
+G1 X80 Y-15
+G1 Z0.45  F200 		; Move Z to Cleaning Height
+;G1 Y65 E15 F200	; Move 40mm and extrude
+G1 X120 E15 F200
+G1 Z5 F300		; Lift Nozzle

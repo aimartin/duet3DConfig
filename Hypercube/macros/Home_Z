@@ -1,0 +1,11 @@
+;*** Home Z Axis --------------------------------------------------------
+T0						; Select Tool 0
+M106 P1 S0					; Disable E3D Fan 
+;M109 S130					; Set Temperature of Tool 0 to 130ºC and WAIT
+G1 X0 Y0 F3000					; Move X and Y to the Z Homing Point
+;G30 S-1						; Probe Z in the Homing Point and DON'T adjust Z coordinate
+;G1 Z2						; Raise Z to 2 mm
+G30                         			; Home Z-axis	
+G1 Z2						; Raise Z to 2 mm
+G30                         			; Home Z-axis	
+G1 Z5						; Raise Z to 5 mm
