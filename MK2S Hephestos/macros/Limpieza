@@ -1,0 +1,7 @@
+; Clean Nozzle
+G90			; Absolute Positioning
+G1 Z5 F5000 		; Lift Nozzle
+G1 X65 Y-5
+G1 Z0.45  F200 		; Move Z to Cleaning Height
+G1 X105 E15 F200
+G1 Z5 F300		; Lift Nozzle

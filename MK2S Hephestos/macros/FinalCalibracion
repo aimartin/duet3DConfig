@@ -1,0 +1,4 @@
+; Macro that will be executed at the end of all Calibration GCodes
+M106 P1 S1 I0 F500 H1 T50		; Reset E3D Fan Configuration
+;G10 P0 S200				; Set Temperature to Load Temperature
+;G1 X150 Y0 Z5 F3000			; Move X and Y to the Load Point

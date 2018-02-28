@@ -1,0 +1,5 @@
+G30 P0 X0 Y110 Z-99999 ; probe near a leadscrew
+G30 P1 X285 Y110 Z-99999 S2 ; probe near a leadscrew
+;G29 S2
+;G28 Z
+;G29 S0

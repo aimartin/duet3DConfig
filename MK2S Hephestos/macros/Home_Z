@@ -1,0 +1,12 @@
+;*** Home Z Axis --------------------------------------------------------
+M98 P/macros/InicialCalibracion
+
+G1 X0 Y0 F3000					; Move X and Y to the Z Homing Point
+;G30 S-1					; Probe Z in the Homing Point and DON'T adjust Z coordinate
+;G1 Z2						; Raise Z to 2 mm
+G30                         			; Home Z-axis	
+G1 Z2						; Raise Z to 2 mm
+G30                         			; Home Z-axis	
+G1 Z5						; Raise Z to 5 mm
+
+M98 P/macros/FinalCalibracion
