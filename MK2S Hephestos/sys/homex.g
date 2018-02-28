@@ -7,6 +7,7 @@ G1 Z5 F6000      			; lift Z relative to current position
 
 M400					; make sure everything has stopped before we make changes
 M574 X1 S3				; set endstops to use motor stall
+M915 P0 S3 F0 H200 R1
 M913 X50 Y50 Z50			; reduce motor current to 50% to prevent belts slipping
 G91					; use relative positioning
 
@@ -18,3 +19,4 @@ M913 X100 Y100 Z100			; motor currents back to normal
 
 ;G1 Z-2 F6000      			; Down Z relative to current position
 G90 	           			; Absolute positioning
+M915 P0 S12 F0 H200 R1

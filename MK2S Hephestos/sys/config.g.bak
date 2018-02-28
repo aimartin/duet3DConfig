@@ -26,16 +26,16 @@ M208 X200 Y180 Z150 S0                          ; Set axis maxima
 M350 X256 Y256 I0                               ; Configure microstepping without interpolation for X and Y
 M350 Z32 I1                                     ; Configure microstepping with interpolation for Z 
 M350 E16 I0					; Configure microstepping without interpolation for E
-M92 X2560 Y1280 Z800 E100                       ; Set steps per mm
+M92 X2560 Y1280 Z800 E415                       ; Set steps per mm
 M566 X600 Y600 Z24 E1500                        ; Set maximum instantaneous speed changes (mm/min)
 M203 X6000 Y6000 Z300 E1200                     ; Set maximum speeds (mm/min)
 M201 X1200 Y1200 Z500 E10000                    ; Set accelerations (mm/s^2)
-M906 X1100 Y1100 Z800 E800 I30                  ; Set motor currents (mA) and motor idle factor in per cent
+M906 X1100 Y1100 Z800 E450 I30                  ; Set motor currents (mA) and motor idle factor in per cent
 M84 S30                                         ; Set idle timeout
 
 ;*** endstop configuration ----------------------------------------------
 M574 Y1 S1 					; Set endstop configuration (Y endstops only, active high mode)
-M915 P0 S3 F0 H200 R1				; Configure Stall Detection - Drive 0 (X), Sensibility 3, Unfiltered (F0), 200 Min Steps, Inform (R1)
+M915 P0 S12 F0 H200 R1				; Configure Stall Detection - Drive 0 (X), Sensibility 3, Unfiltered (F0), 200 Min Steps, Inform (R1)
 M574 X1 S3					; Set endstop configuration (X endstops only, Motor Load mode)
 
 ; Heaters
