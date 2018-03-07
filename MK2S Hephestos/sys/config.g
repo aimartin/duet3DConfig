@@ -11,24 +11,27 @@ G21 						; Work in millimetres
 M550 PHephestos MK2S                            ; Set machine name
 M552 S1                                         ; Enable network
 M586 P0 S1                                      ; Enable HTTP
-M586 P1 S1                                      ; Disable FTP
+M586 P1 S1                                      ; Enable FTP
 M586 P2 S0                                      ; Disable Telnet
 
 ;*** Machine configuration ----------------------------------------------
 M569 P0 S1                                      ; X Drive 0 goes forward
 M569 P1 S1                                      ; Y Drive 1 goes forward
-M569 P2 S1                                      ; Z Drive 2 goes forwards
+M569 P2 S1                                      ; Z Drive 2 goes forward (Izquierdo)
+M569 P4 S1					; Z Drive 4 goes forward (Derecho)
 M569 P3 S1                                      ; E0 Drive 3 goes backwards (Bondtech)
+M584 X0 Y1 Z2:4 E3				; Driver 0 controls X motor, 1 controls Y, 2 and 4 controls Z, 3 controls E0
 M208 X-15 Y-35 Z0 S1                            ; Set axis minima
 M208 X200 Y180 Z150 S0                          ; Set axis maxima
+M671 X-65:X265 Y80:Y80 S3  			; Driver2 Z POS (-65,100), Driver4 Z POS (265,Y100), Max Correction 2mm
 
 ;*** Mechanics ----------------------------------------------------------
 M350 X256 Y256 I0                               ; Configure microstepping without interpolation for X and Y
-M350 Z32 I1                                     ; Configure microstepping with interpolation for Z 
+M350 Z256 I0                                    ; Configure microstepping with interpolation for Z 
 M350 E16 I0					; Configure microstepping without interpolation for E
-M92 X2560 Y1280 Z800 E415                       ; Set steps per mm
+M92 X1280 Y1280 Z6400 E415                      ; Set steps per mm
 M566 X600 Y600 Z24 E1500                        ; Set maximum instantaneous speed changes (mm/min)
-M203 X6000 Y6000 Z300 E1200                     ; Set maximum speeds (mm/min)
+M203 X6000 Y6000 Z300 E3600                     ; Set maximum speeds (mm/min)
 M201 X1200 Y1200 Z500 E10000                    ; Set accelerations (mm/s^2)
 M906 X1100 Y1100 Z800 E450 I30                  ; Set motor currents (mA) and motor idle factor in per cent
 M84 S30                                         ; Set idle timeout

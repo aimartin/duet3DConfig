@@ -1,7 +1,7 @@
 ;*** Z Probe - PrecisionPiezo ------------------------------------------
-M558 P8 I1 F320 R1 T3000 H1 X0 Y0 Z0 A5 S0.02 	; Tipo 5, Invert True, Speed 320mm/m, Altura 2, Velocidad Travel 3000mm/min, 
-M557 X0:200 Y0:155 S25 				; Define mesh grid, X from 0 to 300, Y from 0 to 250, Grid 40
-G31 X0 Y0 Z-0.27 P150 				; PC PLA (Selected)
+M558 P8 I1 F150 R1 T3000 H1 X0 Y0 Z0 A5 S0.02 	; Tipo 5, Invert True, Speed 150mm/m, Altura 2, Velocidad Travel 3000mm/min, 
+M557 X0:200 Y0:180 S20 				; Define mesh grid, X from 0 to 300, Y from 0 to 250, Grid 40
+G31 X0 Y0 Z-0.23 P150 				; PC PLA (Selected)
 
 
 ;*** Z Probe - IR DC42 -------------------------------------------------
