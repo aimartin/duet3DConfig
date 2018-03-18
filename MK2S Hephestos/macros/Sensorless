@@ -3,7 +3,7 @@ M400					; make sure everything has stopped before we make changes
 M574 X1 S3				; set endstops to use motor stall
 M913 X50 Y50 Z50			; reduce motor current to 50% to prevent belts slipping
 G91					; use relative positioning
-
+M915 P0 S3 F0 H200 R1
 G1 S1 X-300  F4000			; move all carriages up 700mm, stopping at the endstops
 
 G90					; back to absolute positioning

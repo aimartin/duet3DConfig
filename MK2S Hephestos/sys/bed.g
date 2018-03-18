@@ -14,6 +14,6 @@ M98 P/macros/ZConfig
 ;M98 P/macros/FinalCalibracion
 G28 Z
 G30 P0 X0 Y80 Z-99999 ; probe near a leadscrew
-G30 P1 X200 Y80 Z-99999 S2 ; probe near a leadscrew
+G30 P1 X190 Y80 Z-99999 S2 ; probe near a leadscrew
 G28 Z
-G29
+;G29
