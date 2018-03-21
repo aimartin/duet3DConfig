@@ -1,24 +1,24 @@
-; File "ExtruderMount-Direct.gcode" resume print after print paused at 2018-03-15 23:57
+; File "skeletal-hand.gcode" resume print after print paused at 2018-03-21 17:29
 G10 P0 S210 R210
 T0 P0
 G29 S1
 M98 Presurrect-prologue.g
-M106 P0 S0.30
+M106 P0 S0.80
 M106 P3 S0.00
 M106 P4 S0.00
 M106 P5 S0.00
 M106 P6 S0.00
 M106 P7 S0.00
 M106 P8 S0.00
-M106 S76.00
+M106 S204.00
 M116
-M290 S-0.100
+M290 S0.000
 G92 E0.00000
 M83
-M23 ExtruderMount-Direct.gcode
-M26 S68269 P0.000
-G0 F6000 Z2.550
-G0 F6000 X73.10 Y57.63
-G0 F6000 Z0.550
-G1 F2520.0 P0
+M23 skeletal-hand.gcode
+M26 S37648573 P0.000
+G0 F6000 Z136.100
+G0 F6000 X60.84 Y52.32
+G0 F6000 Z134.100
+G1 F1291.0 P0
 M24
