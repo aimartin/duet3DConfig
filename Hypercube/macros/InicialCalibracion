@@ -1,5 +1,0 @@
-; Macro that will be executed at the beginning of all Calibration GCodes
-T0							; Select Tool 0
-;M109 S130						; Set Temperature of Tool 0 to 130ºC and WAIT
-M106 P1 S0						; Disable E3D Fan 
-M106 P0 S0						; Disable Blower Fan

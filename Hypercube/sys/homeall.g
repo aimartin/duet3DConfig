@@ -1,30 +1,23 @@
-;*** Home X and Y Axis --------------------------------------------------
-M400						; Make sure everything has stopped before we make changes
-G91                         			; Relative coordinates
-G1 Z10 F6000                 			; Lower bed to avoid hot end dragging in bed.
-M106 P1 S0					; Disable E3D Fan 
-M913 X80 Y80					; Reduce motor current to 70%
+; homeall.g
+; called to home all axes
+;
+M400                  ; make sure everything has stopped before we make changes
+M915 X Y S2 R0 F0     ; set X and Y to sensitivity 2, do nothing when stall, unfiltered
+M574 X1 Y1 S3         ; set endstops to use motor stall
 
-;G1 Y-350 F3000 S1     				; Move up to 350mm in the -Y direction until the homing switches are triggered
-G1 S1 Y-350 F4000     				; Move up to 350mm in the -Y direction
-;G1 Y6 F600               			; Move slowly 6mm in +Y direction
-;G1 Y-10 S1             			; Move up to 10mm in the -Y direction until the homing switches are triggered
+G91                   ; use relative positioning
+;G1 Z10 F1200          ; lift Z
 
-G1 Y0 F3000					; Move Y to 0
-G1 X-350 F3000 S1     				; Move up to 350mm in the -X direction until the homing switches are triggered
-;G1 X6 F600               			; Move slowly 6mm in +X direction
-;G1 X-10 S1             			; Move up to 10mm in the -X direction until the homing switches are triggered
+G1 S1 X-325 Y-325 F3600 ; move right/back 325mm, stopping at the endstop
+G1 X5 Y5            ; move away from home
+; X or Y is homed at this point, now home the other axis
+G1 S1 X-325 F3600      ; move towards axis minimum 
+G1 S1 Y-325 F3600      ; move towards axis minimum 
+G1 X5 Y5                      ; move away from home
 
-G90                         			; Absolute coordinates
-M400						; Make sure everything has stopped before we reset the motor currents
-M913 X100 Y100					; Motor currents back to normal
-G1 X0 Y0 F3000					; Go to the Testing Point
+;G1 Z-10 F1200           ; lower Z
+M400                  ; make sure everything has stopped before we reset the motor currents
+G90                   ; back to absolute positioning
+M574 X1 Y1 S1         ; define active low microswitches
 
-G91
-G1 Z-10
-G90
-;*** Configure Z Probe -------------------------------------------------- THIS OVERRIDES THE CONFIGURATION OF CONFIG.G!
-M98 P/macros/ZConfig
-
-;*** Home Z Axis --------------------------------------------------------
-M98 P/macros/Home_Z
+G92 Z0

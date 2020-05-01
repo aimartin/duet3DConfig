@@ -1,0 +1,22 @@
+M561					; Delete actual mesh
+
+; Numero + Alto = Mas pegado a la base
+; Numero + Bajo = Mas despegado de la base
+
+; PINDA ;
+;M558 P5 C"^zprobe.in" F150 R0 T6000 H3 A5 S0.007 	; Tipo 5, Speed 150mm/m, Recovery 1, Altura 3, Velocidad Travel 3000mm/min, Max 3 Retries
+;M557 X25:290 Y10:300 P3 ; PINDA
+;G31 X25 Y0 Z1.600 ;PINDA Prusa - 1.551 - 0.15
+
+
+; IRDA ;
+;M558 P1 C"^zprobe.in" F70 R0 T6000 H4 A5 S0.007	; Sensor IR
+;M557 X25:290 Y10:300 P7 ; IR
+;G31 X25 Y0 P500 Z2.476
+
+
+; BLTOUCH ;
+M558 P9 C"^zprobe.in" H3.2 F50 T8000 A10 R0.75 S0.005 ; B1
+M950 S0 C"exp.heater3"
+M557 X25:290 Y5:295 P4:5
+G31 X25 Y0 P25 Z3.875 ; Z3.720 (Buildtak) | Z3.880 (AzulMin)
